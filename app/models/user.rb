@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   belongs_to :city
 
+  validates_presence_of :email
+
   def city_name
     self.city.name if self.city.present?
   end
