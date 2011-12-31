@@ -3,10 +3,8 @@ class City < ActiveRecord::Base
   
 #  validates_presence_of :name
 
-  
   # TODO: write a validation that queries the weather API and checks for city
-  
-  # attr_accessor for rainy_today is necessary for weather API methods
+
   attr_accessor :rainy_today
     
   def rainy_today?
@@ -17,12 +15,7 @@ class City < ActiveRecord::Base
     end
   end
   
-  # write a method that sets a location to a variable
-  # checks .wet? 
-  # if true then set rainy_today true
-  # if not true then set rainy_today false
-  
-  def self.check_all_forecasts
+  def self.check_all_forecasts_and_set
     cities = City.all
     cities.each do |z|
       if z.check_for_rain
