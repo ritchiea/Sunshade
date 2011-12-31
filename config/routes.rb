@@ -1,4 +1,18 @@
 Sunshade::Application.routes.draw do
+  get "cities/index"
+
+  get "cities/show"
+
+  get "cities/new"
+
+  get "cities/edit"
+
+  get "cities/create"
+
+  get "cities/update"
+
+  get "cities/destroy"
+
   resources :users
 
   # The priority is based upon order of creation:
