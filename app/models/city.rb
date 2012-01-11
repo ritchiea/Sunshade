@@ -28,7 +28,7 @@ class City < ActiveRecord::Base
   
   def check_for_rain
     city_forecast = self.set_city_and_measure
-    forecast_wet = city_forecast.wet?("13:00",25)
+    is_forecast_wet = city_forecast.wet?("13:00",25)
   end
  
   def set_city_and_measure
