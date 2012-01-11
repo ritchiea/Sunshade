@@ -3,7 +3,7 @@ class City < ActiveRecord::Base
   
   validates_presence_of :name
 
-  # TODO: write a validation that queries the weather API and checks for city
+  # TODO: write a custom validation that queries the weather API and checks for city presence
 
   attr_accessor :rainy_today
     
@@ -15,7 +15,7 @@ class City < ActiveRecord::Base
     end
   end
   
-  def self.check_all_forecasts_and_set
+  def self.check_all_forecasts_and_set_bools
     cities = City.all
     cities.each do |z|
       if z.check_for_rain
@@ -29,13 +29,11 @@ class City < ActiveRecord::Base
   def check_for_rain
     city_forecast = self.set_city_and_measure
     forecast_wet = city_forecast.wet?("13:00",25)
-    return forecast_wet
   end
  
   def set_city_and_measure
     city = Barometer.new("#{self.name}")
     full_forecast = city.measure
-    return full_forecast
   end
 
 end
