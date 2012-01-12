@@ -6,11 +6,7 @@ class City < ActiveRecord::Base
   # TODO: write a custom validation that queries the weather API and checks for city presence
     
   def rainy_today?
-    if self.rainy_today
-      return true
-    else
-      return false
-    end
+    self.rainy_today == true
   end
   
   def self.check_all_forecasts_and_set_bools
