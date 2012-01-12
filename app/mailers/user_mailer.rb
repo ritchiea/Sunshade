@@ -7,5 +7,6 @@ class UserMailer < ActionMailer::Base
     :subject => "It's going to rain today in #{user.city_name}!")
   end
   
+  # TODO: write welcome email
   
 end
