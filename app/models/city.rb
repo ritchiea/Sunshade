@@ -40,6 +40,9 @@ class City < ActiveRecord::Base
   # TODO: brainstorm a better rain checker
   # perhaps check at several times during today and any 1 "yes" returns true
   
+  # BUG: currently considers all precipitation "wet" thus snow will trigger rainy_today
+  # return to weather API and sort out greater specificity 
+  
   def check_for_rain
     city_forecast = self.set_city_and_measure
     is_forecast_wet = city_forecast.wet?("13:00",25)
