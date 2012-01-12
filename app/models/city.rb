@@ -26,6 +26,21 @@ class City < ActiveRecord::Base
     end
   end
   
+  # write a method that checks if a city is rainy today
+  # if true email all users in that city
+  
+  def self.check_bool_and_send_umbrella_emails
+    cities = City.all
+    cities.each do |z|
+      if z.rainy_today?
+        z.email_all_users
+      end
+    end
+  end
+  
+  def email_all_users
+  end
+  
   # Checks weather at 1pm
   # TODO: brainstorm a better rain checker
   # perhaps check at several times during today and any 1 "yes" returns true
