@@ -8,7 +8,7 @@ class City < ActiveRecord::Base
   attr_accessor :rainy_today
     
   def rainy_today?
-    if !!self.rainy_today
+    if self.rainy_today
       return true
     else
       return false
