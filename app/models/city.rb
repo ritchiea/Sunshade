@@ -4,8 +4,6 @@ class City < ActiveRecord::Base
   validates_presence_of :name
 
   # TODO: write a custom validation that queries the weather API and checks for city presence
-
-  attr_accessor :rainy_today
     
   def rainy_today?
     if self.rainy_today
