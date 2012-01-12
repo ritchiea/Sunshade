@@ -26,6 +26,10 @@ class City < ActiveRecord::Base
     end
   end
   
+  # Checks weather at 1pm
+  # TODO: brainstorm a better rain checker
+  # perhaps check at several times during today and any 1 "yes" returns true
+  
   def check_for_rain
     city_forecast = self.set_city_and_measure
     is_forecast_wet = city_forecast.wet?("13:00",25)
