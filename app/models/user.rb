@@ -3,8 +3,6 @@ class User < ActiveRecord::Base
 
   validates_presence_of :email
   validates_uniqueness_of :email
-  
-  attr_accessor :email
 
   def city_name
     self.city.name if self.city.present?
