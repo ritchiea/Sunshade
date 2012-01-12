@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111224210329) do
+ActiveRecord::Schema.define(:version => 20120112121208) do
 
   create_table "cities", :force => true do |t|
     t.boolean  "rainy_today", :default => false
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20111224210329) do
     t.integer  "city_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
   end
 
 end
