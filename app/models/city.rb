@@ -43,7 +43,6 @@ class City < ActiveRecord::Base
     users.each do |u|
       UserMailer.sunshade_email(u).deliver
     end
-    
   end
   
   # Checks weather at 1pm
