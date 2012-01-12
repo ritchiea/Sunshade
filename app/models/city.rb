@@ -24,12 +24,12 @@ class City < ActiveRecord::Base
     cities = City.all
     cities.each do |z|
       if z.rainy_today?
-        z.email_all_users
+        z.email_sunshade_reminder
       end
     end
   end
   
-  def email_all_users
+  def email_sunshade_reminder
     users = self.users.all
     users.each do |u|
       UserMailer.sunshade_email(u).deliver
