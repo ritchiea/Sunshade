@@ -4,7 +4,7 @@ class UserMailer < ActionMailer::Base
   def sunshade_email(user)
     @user = user
     mail(:to => user.email, 
-    :subject => "It's going to rain today in #{user.city_name}!")
+    :subject => "It's likely to rain today in #{user.city_name}!")
   end
   
   # TODO: write welcome email
