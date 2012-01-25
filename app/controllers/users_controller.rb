@@ -24,12 +24,12 @@ class UsersController < ApplicationController
   # GET /users/new
   # GET /users/new.json
   def new
-    @user = User.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @user }
+    if current_user
+      redirect_to edit_user_path(session[:user_id])
+    else
+      @user = User.new
     end
+
   end
 
   # GET /users/1/edit
