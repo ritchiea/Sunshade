@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  attr_accessible :email, :password, :password_confirmation, :city_name, :name
   
   belongs_to :city
 
