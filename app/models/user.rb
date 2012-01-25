@@ -1,9 +1,12 @@
 class User < ActiveRecord::Base
+  attr_accessible :email, :password, :password_confirmation, :name
   
   belongs_to :city
 
   validates_presence_of :email
   validates_presence_of :password, :on => :create, :message => "Password can't be blank!"
+  validates_length_of :password, :in 6..14, :too_short => "Password must be 6 characters", 
+                      :too_long => "Password cannot be more than 14 characters"
   validates_uniqueness_of :email
   validates_confirmation_of :password
   
@@ -25,5 +28,13 @@ class User < ActiveRecord::Base
     end
   end
   
+  def self.authenticate(email, password)
+    user = find_by_email(email)
+    if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)
+      user
+    else
+      nil
+    end
+  end
 
 end
