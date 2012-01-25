@@ -36,6 +36,7 @@ GEM
       httparty (>= 0.4.5)
       nokogiri
       tzinfo (>= 0.3.14)
+    bcrypt-ruby (3.0.1)
     builder (3.0.0)
     coffee-rails (3.1.1)
       coffee-script (>= 2.2.0)
@@ -133,6 +134,7 @@ PLATFORMS
 
 DEPENDENCIES
   barometer (~> 0.7.3)
+  bcrypt-ruby
   coffee-rails (~> 3.1.1)
   httparty (~> 0.8.1)
   jquery-rails

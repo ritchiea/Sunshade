@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem "tzinfo", "~> 0.3.31"
 gem "httparty", "~> 0.8.1"
 gem "barometer", "~> 0.7.3"
+gem 'bcrypt-ruby', :require => 'bcrypt'
 
 
 # Gems used only for assets and not required

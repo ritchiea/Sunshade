@@ -1,17 +1,9 @@
 Sunshade::Application.routes.draw do
-  get "cities/index"
-
-  get "cities/show"
-
-  get "cities/new"
-
-  get "cities/edit"
-
-  get "cities/create"
-
-  get "cities/update"
-
-  get "cities/destroy"
+  
+  get "sign_up" => "users#new", :as => "sign_up"
+  root :to => "users#new"
+  
+  resources :cities
 
   resources :users
 
