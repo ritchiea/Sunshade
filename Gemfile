@@ -5,7 +5,7 @@ gem 'rails', '3.1.1'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+gem 'pg'
 gem "tzinfo", "~> 0.3.31"
 gem "httparty", "~> 0.8.1"
 gem "barometer", "~> 0.7.3"
@@ -32,7 +32,6 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 # To use debugger
-gem 'ruby-debug19', :require => 'ruby-debug'
 
 group :test do
   # Pretty printed test output
