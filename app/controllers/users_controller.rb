@@ -77,4 +77,9 @@ class UsersController < ApplicationController
       format.json { head :ok }
     end
   end
+  
+  def confirm
+    render :text => "Confirmed"
+  end
+  
 end

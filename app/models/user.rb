@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   
   attr_accessor :password
   before_save :encrypt_password
+  before_create :send_confirmation_email
 
   def city_name
     self.city.name if self.city.present?
@@ -35,6 +36,15 @@ class User < ActiveRecord::Base
     else
       nil
     end
+  end
+  
+  def send_confirmation_email
+    #TODO: initialize token
+    UserMailer.signup_email(self).deliver
+  end
+
+  def check_token(token)
+    
   end
 
 end

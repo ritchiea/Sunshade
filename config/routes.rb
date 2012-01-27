@@ -10,7 +10,11 @@ Sunshade::Application.routes.draw do
   
   resources :cities
 
-  resources :users
+  resources :users do 
+    member do
+      get "confirm"
+    end
+  end
   
   resources :sessions
 

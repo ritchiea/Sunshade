@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: "info@sunshade.me"
+  default from: "hello@sunshade.me"
   
   def sunshade_email(user)
     @user = user
@@ -7,6 +7,10 @@ class UserMailer < ActionMailer::Base
     :subject => "It's likely to rain today in #{user.city_name}!")
   end
   
-  # TODO: write welcome email
+  def signup_email(user)
+    @user = user
+    mail(:to => user.email,
+    :subject => "Confirm your subscription to Sunshade.me")
+  end
   
 end
