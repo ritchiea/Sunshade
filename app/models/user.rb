@@ -44,7 +44,7 @@ class User < ActiveRecord::Base
   end
 
   def check_token(token)
-    
+  #TODO: write code to check token
   end
 
 end
